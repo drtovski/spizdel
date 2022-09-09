@@ -1,7 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 const { convertTime } = require('../../utils/convert.js');
-const { trackStartEventHandler } = require("../../utils/functions");
-const db = require("../../schema/setup");
+
 
 module.exports = async (client, player, track, payload) => {
 
@@ -9,16 +8,7 @@ module.exports = async (client, player, track, payload) => {
   if (!guild) return;
   let channel = guild.channels.cache.get(player.textChannel);
   if (!channel) return;
-  let data = await db.findOne({ Guild: guild.id });
-  if (data && data.Channel) {
-    let textChannel = guild.channels.cache.get(data.Channel);
-    const id = data.Message;
-    if (channel.id === textChannel.id) {
-      return await trackStartEventHandler(id, textChannel, player, track, client);
-    } else {
-      await trackStartEventHandler(id, textChannel, player, track, client);
-    };
-  };
+  
   const emojiplay = client.emoji.play;
   const volumeEmoji = client.emoji.volumehigh;
   const emojistop = client.emoji.stop;
