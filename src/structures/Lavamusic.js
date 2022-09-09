@@ -1,6 +1,6 @@
 const { Message, Client } = require("discord.js");
 const { Structure, Manager } = require("erela.js");
-const { nodes, SpotifyID, SpotifySecret } = require("../config");
+const { nodes } = require("../config");
 const deezer = require("erela.js-deezer");
 const Spotify = require("erela.js-spotify");
 const apple = require("erela.js-apple");
@@ -232,10 +232,6 @@ class Lavamusic extends Manager {
       nodes: nodes,
       plugins: [
         new deezer(),
-        new Spotify({
-          clientID: SpotifyID,
-          clientSecret: SpotifySecret
-        }),
         new apple(),
         new facebook(),
       ],
