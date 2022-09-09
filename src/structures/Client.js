@@ -48,27 +48,7 @@ class MusicBot extends Client {
       this.logger.log(info, "log");
     });
 
-    /**
-     *  Mongose for data base
-     */
-    const dbOptions = {
-      useNewUrlParser: true,
-      autoIndex: false,
-      connectTimeoutMS: 10000,
-      family: 4,
-      useUnifiedTopology: true,
-    };
-    mongoose.connect(this.config.mongourl, dbOptions);
-    mongoose.Promise = global.Promise;
-    mongoose.connection.on("connected", () => {
-      this.logger.log("[DB] DATABASE CONNECTED", "ready");
-    });
-    mongoose.connection.on("err", (err) => {
-      console.log(`Mongoose connection error: \n ${err.stack}`, "error");
-    });
-    mongoose.connection.on("disconnected", () => {
-      console.log("Mongoose disconnected");
-    });
+    
 
     ["commands", "slashCommand", "events"].forEach((handler) => {
       require(`../handlers/${handler}`)(this);
