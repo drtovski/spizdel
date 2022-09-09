@@ -61,7 +61,7 @@ module.exports = {
                     }
                 }
             }
-            
+            const prefix = "!"
 
             try {
                 await command.run(client, interaction, prefix);
