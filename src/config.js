@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 module.exports = {
-    token: process.env.TOKEN || "MTAxNzcxNzAzMjI2OTExOTUyOA.GZWzTB.gWciDauGlsKHVFSMUzZAabkrMXU9aVJG_KIU6Q.GNuvgD.zG_bFBoDfA3e4SPXV4-7I55EwvJ5ZM5nYGusB0",  // your bot token
+    token: process.env.TOKEN || "MTAxNzcxNzAzMjI2OTExOTUyOA.GSYXYu.Sf9NhNP0EH6ihAnjN_NKuqKHP3KaubZRS6tqsU",  // your bot token
     clientID: process.env.CLIENT_ID || "1017717032269119528", // your bot client id
     prefix: process.env.PREFIX || "!", // bot prefix
     ownerID: process.env.OWNERID || "1017717032269119528", //your discord id
