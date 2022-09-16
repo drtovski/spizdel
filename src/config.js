@@ -17,10 +17,10 @@ module.exports = {
     },
     nodes: [
         {
-            host: process.env.NODE_HOST || "lavalink.oops.wtf",
-            port: parseInt(process.env.NODE_PORT || "443"),
-            password: process.env.NODE_PASSWORD || "www.freelavalink.ga",
-            secure: parseBoolean(process.env.NODE_SECURE || "true"),
+            host: process.env.NODE_HOST || "",
+            port: parseInt(process.env.NODE_PORT || ""),
+            password: process.env.NODE_PASSWORD || "",
+            secure: parseBoolean(process.env.NODE_SECURE || ""),
 
         }
     ],
